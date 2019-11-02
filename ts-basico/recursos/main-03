@@ -1,0 +1,25 @@
+class Animal {
+    nombre: string;
+
+    constructor(nombre: string) {
+        this.nombre = nombre;
+    }
+
+    mover() {
+        console.log(`Soy ${this.nombre} y me estoy moviendo`);
+    }
+}
+
+class Perro extends Animal {
+    constructor(name: string){
+        super(name);
+    }
+
+    ladrar() {
+        console.log('guau guau guau guau !!!');
+    }
+}
+
+const objPerro: Perro =  new Perro("tobi");
+objPerro.mover();
+objPerro.ladrar();

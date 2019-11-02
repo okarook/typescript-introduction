@@ -1,0 +1,4 @@
+-- Pasos para preparar el ambiente
+----------------------------------
+    - Crear proyecto
+        > npx create-react-app my-app --typescript

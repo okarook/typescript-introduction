@@ -1,0 +1,75 @@
+interface validaAnimal {
+    codigo: number;
+    nombre: string;
+    edad: number;
+    vuela?: boolean;
+}
+
+class Animal {
+    codigo: number;
+    nombre: string;
+    edad: number;
+    vuela?: boolean;
+
+    constructor(data: validaAnimal) {
+        this.codigo = data.codigo;
+        this.nombre = data.nombre;
+        this.edad = data.edad;
+        this.vuela = (data.vuela || false);
+    }
+
+    mover() {
+        let mensaje: string = `Soy ${this.nombre} y me estoy moviendo`;
+        if (this.vuela) {
+            mensaje = `Soy ${this.nombre} y estoy volando`;
+        }
+        
+        console.log(mensaje);
+    }
+
+    esVolador() {
+        if (this.vuela) 
+            console.log('El animal vuela')
+        else 
+            console.log('El animal no vuela')
+    }
+}
+
+class Perro extends Animal {
+    constructor(data: validaAnimal){
+        super(data);
+    }
+
+    ladrar() {
+        console.log('guau guau guau guau !!!');
+    }
+}
+
+class Paloma extends Animal {
+    constructor(data: validaAnimal) {
+        super({...data, vuela: true });
+    }
+
+    volar() {
+        console.log('vuelo vuelo vuelo !!!');
+    }
+}
+
+
+const objPerro: Perro =  new Perro({
+    codigo: 1,
+    nombre: 'Tobi',
+    edad: 3
+});
+objPerro.mover();
+objPerro.ladrar();
+objPerro.esVolador();
+
+const objPaloma: Paloma =  new Paloma({
+    codigo: 1,
+    nombre: 'Lola',
+    edad: 3
+});
+objPaloma.mover();
+objPaloma.volar();
+objPaloma.esVolador();

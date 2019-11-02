@@ -1,0 +1,14 @@
+-- Pasos para preparar el ambiente
+----------------------------------
+    - Instalar NodeJs - npm
+    
+    - Instalar el paquete global de typescript
+        > npm install -g typescript
+    
+    - Transpilar codigo
+        > tsc archivo.ts
+
+    - Solucionar algunos errores de window
+        > Set-ExecutionPolicy Unrestricted
+
+    
